@@ -2,22 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        body{text-align: center;}
+        .item{
+            border: 5px solid lightblue;
+            margin: 50px;
+            padding: 30px;
+        }
+    </style>
 </head>
 <body>
-    <h1>TEAM PROJECT</h1>
+    <h1>🦁MY TEAM🦁</h1>
     <div class = "container">
-    <!-- views.py 에서 보낸 오브젝트를 사용가능 -->
-    {% for team in teams %} 
-        <!-- 어떤 object인지 나타내줌  -->
-        <!-- {{team}} -->
-        <!-- 하지만 우리가 보고싶은 건 object 안에 담긴 cloumn  -->
-        <div>
-	        <h3>{{team.name}}</h3>
-	        <p>{{team.birthday}}</p>
-	        <p>{{team.home}}</p>
+    {% for team in teams %}
+        <div class = "item">
+	        <h2>{{team.name}}</h2>
+	        <p>생년월일: {{team.birthday}}</p>
+            <p>고향: {{team.home}}</p>
+            <p>거주지: {{team.residence}}</p>
+            <p>전공: {{team.major}}</p>
+            <p>학번: {{team.hakbun}}</p>
+            <p>애인유무: {{team.lover}}</p>
+            <p>좋아하는 음식: {{team.food}}</p>
+            <p>주량: {{team.sul}}</p>
+            <p>꿈: {{team.dream}}</p>
         </div>
     {% endfor %}
     </div>
