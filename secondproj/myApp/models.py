@@ -14,4 +14,17 @@ class Customer(models.Model):
     gender = models.CharField(max_length=10)
     birthday = models.DateField()
     body = models.TextField()
+
+class Team(models.Model):
+    name = models.CharField(default = '',max_length=10)
+    birthday = models.DateField(default = '')
+    home = models.CharField(default = '',max_length=10)
+    residence = models.CharField(default = '',max_length=10)
+    major = models.CharField(default = '',max_length=10)
+    hakbun = models.CharField(default = '',max_length=10)
+    lover = models.CharField(default = '',max_length=10)
+    sul = models.CharField(default = '',max_length=10)
+    food = models.CharField(default = '',max_length=10)
+    dream = models.TextField(default = '')
+    
     

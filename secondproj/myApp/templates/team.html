@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TEAM PROJECT</h1>
+    <div class = "container">
+    <!-- views.py 에서 보낸 오브젝트를 사용가능 -->
+    {% for team in teams %} 
+        <!-- 어떤 object인지 나타내줌  -->
+        <!-- {{team}} -->
+        <!-- 하지만 우리가 보고싶은 건 object 안에 담긴 cloumn  -->
+        <div>
+	        <h3>{{team.name}}</h3>
+	        <p>{{team.birthday}}</p>
+	        <p>{{team.home}}</p>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>
