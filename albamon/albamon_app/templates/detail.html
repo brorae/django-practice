@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <style>
+        div{ text-align: center;}
+    </style>
+</head>
+<body>
+    <div>
+    <p>가게이름 : {{name}}</p>
+    <p>위치 : {{location}}</p>
+    <p>가게정보 : {{information}}</p>
+    <p>시급 : {{pay}}</p>
+    <p>하는 일 : {{work}}</p>
+    <p>지원자 수 : {{applier}}</p>
+    <form action="{% url 'plus' id %}" >
+        <button>지원하기</button>
+    </form>
+    <br></br>
+    <form action="{% url 'minus' id %}" >
+        <button>지원 취소하기</button>
+    </form>
+    <br></br>
+    <form action="{% url 'update_page' id %}" >
+        <button>수정하기</button>
+    </form>
+    
+    <br></br>
+    <form action="{% url 'delete' id %}" >
+        <button>삭제하기</button>
+    </form>
+    </div>
+</body>
+</html>

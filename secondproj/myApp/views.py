@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Blog
+from django.shortcuts import get_object_or_404, render
+from .models import Blog, Comment
 from .models import Team
 # Create your views here.
 
@@ -13,3 +13,15 @@ def home(request):
 def team(request):
     teams = Team.objects.all()
     return render(request,'team.html',{'teams':teams})
+
+def detail(request,id):
+    detail_data = get_object_or_404(Blog,pk = id)
+    comments = Comment.objects.filter(blog_id = id)
+    context = {
+        'title' : detail_data.title,
+        'writer' : detail_data.writer,
+        'body' : detail_data.body,
+        'pub_date' : detail_data.pub_date,
+        'id' : id,
+        'comments' : comments
+    }

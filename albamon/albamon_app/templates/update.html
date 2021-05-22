@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+    <style>
+        div{ text-align: center;}
+    </style>
+</head>
+<body>
+    <div>
+    <h1>수정하기</h1>
+    <form action="{% url 'update' id %}" method="POST">
+        {%csrf_token%}
+        <p>가게 이름 : <input type="text" name="name" value="{{name}}"></p>
+        <p>위치 : <input type="text" name="location" value="{{location}}"></p>
+        <p>가게 상세정보 : <textarea name="information" cols="30" rows="10">{{information}}</textarea></p>
+        <p>시급 : <input type="text" name="pay" value="{{pay}}"></p>
+        <p>하는 일 : <textarea name="work" cols="30" rows="10">{{work}}</textarea></p>
+        <p>지원자 수 : <input type="text" name="applier" value="{{applier}}"></p>
+        <button type="submit">작성</button>
+    </form>
+</div>
+</body>
+</html>

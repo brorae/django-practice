@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albamon</title>
+    <style>
+        a{ text-decoration: none;}
+        div{ text-align: center;}
+        .button{
+            border: 5px solid;
+            margin: 10px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="https://uptime.com/media/website_profiles/albamon.com.png" width="500px">
+        <form action="{% url 'post_page' %}" >
+            <button class='button'>알바 구인하기</button>
+        </form>
+        <h2>가게 리스트</h2>
+    {% for i in jobs%}
+        <a href = "{% url 'detail' i.id %}">{{i.name}}</p>
+    {% endfor %}
+    <br></br>
+    
+    </div>
+</body>
+</html>
